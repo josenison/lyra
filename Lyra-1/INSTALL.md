@@ -21,16 +21,12 @@ pip install transformer-engine[pytorch]==1.12.0
 git clone https://github.com/NVIDIA/apex
 CUDA_HOME=$CONDA_PREFIX pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./apex
 # Install MoGe for inference.
-pip install git+MoGe.git
-# Install Mamba for reconstruction model"
+pip install git+"
 ```
 
-You can test the environment setup for inference with
-```bash
-CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python scripts/test_environment.py
-```
+YPREFIX PYTHONPATH=$(pwd)Note (personal):** The Apex build step takes ~10-15 minutes on a typical workstation. If you're on a machine without many CPU cores, consider adding `-j4` or similar to speed up compilation — though the pip install command above doesn't expose that directly. Just be patient.
 
- **Note (personal):** The Apex build step takes ~10-15 minutes on a typical workstation. If you're on a machine without many CPU cores, consider adding `-j4` or similar to speed up compilation — though the pip install command above doesn't expose that directly. Just be patient.
+ **Note (personal):** If the `ln -sf` glob commands fail silently (no nvidia packages found), double-check that the `nvidia-*` CUDA packages were actually installed by pip before running them. You can verify with `pip list | grep nvidia`.
 
 ### Download Cosmos-Predict1 tokenizer
 
@@ -59,12 +55,4 @@ checkpoints/
 └── Cosmos-Tokenize1-DV4x8x8-360p
 ```
 
-Under the checkpoint repository `checkpoints/<model-name>`, we provide the encoder, decoder, the full autoencoder in TorchScript (PyTorch JIT mode) and the native PyTorch checkpoints. For instance for `Cosmos-Tokenize1-CV8x8x8-720p` model:
-```bash
-├── checkpoints/
-│   ├── Cosmos-Tokenize1-CV8x8x8-720p/
-│   │   ├── encoder.jit
-│   │   ├── decoder.jit
-│   │   ├── autoencoder.jit
-│   │   ├── model.pt
-```
+Under the checkpoint repository `checkpoints/<model-name>`, we provide the encoder, decoder, the full autoencoder in TorchScript (PyTorch JIT mode) and the native PyTorch checkpoints. For instance for `Cosmos-Tokenize1-CV8x8x8-720p` mode
