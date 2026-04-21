@@ -34,7 +34,4 @@ The ability to generate virtual environments is crucial for applications ranging
 
 Please follow the [INSTALL.md](INSTALL.md) to set up your conda environment and download pre-trained weights.
 
-> **Personal note:** I tested installation on Ubuntu 22.04 with CUDA 12.1 and Python 3.10 — worked smoothly following the instructions as-is.
-
-## Demo
-Lyra supports both images and videos as input. Below are examples of running Lyra on sing
+> **Personal note:** I tested installation on Ubuntu 22.04 with CUDA 12.1 and Python 3.10 — worked fine after installing `torch==2.1.0` first before the rest of the requirements. If you hit a `ninja` build error during the Gaussian rasterizer compile step, make sure `ninja` is installed via `pip install ninja` before running the setup.
