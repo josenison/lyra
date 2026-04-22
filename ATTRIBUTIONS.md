@@ -4,6 +4,8 @@
    We are grateful to the developers for their contributions to open source and acknowledge these below.
 
 > **Note (personal fork):** This file has been lightly reviewed and corrected. The Better-Profanity copyright holder was listed incorrectly as "The Python Packaging Authority" — it should be the original author (Sean Nguyen). Keeping the rest as-is for now.
+>
+> **TODO:** The FFmpeg section below is incomplete (cut off mid-list). Need to add the remaining libavfilter entries and any other dependencies used by lyra that may be missing from this file.
 
 ## Better-Profanity - [MIT License](https://github.com/snguyenthanh/better_profanity/blob/master/LICENSE)
 
@@ -61,13 +63,5 @@
        - `tests/checkasm/*`
        - `tests/tiny_ssim.c`
    - the following filters in libavfilter:
-       - `signature_lookup.c`
-       - `vf_blackframe.c`
-       - `vf_boxblur.c`
-       - `vf_colormatrix.c`
-       - `vf_cover_rect.c`
-       - `vf_cropdetect.c`
-       - `vf_delogo.c`
-       - `vf_eq.c`
-       - `vf_find_rect.c`
-       - `vf
+   
+```
